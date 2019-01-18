@@ -14,6 +14,6 @@ final class ConfigFactory implements FactoryInterface
         $config = $container->get(Config::class);
         $cache = $config->get("cache", []);
 
-        return new Config($cache);
+        return new \Ixocreate\Package\Cache\Config($cache);
     }
 }
