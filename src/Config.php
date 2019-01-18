@@ -13,11 +13,6 @@ final class Config
     private $pools = [];
 
     /**
-     * @var array
-     */
-    private $drivers = [];
-
-    /**
      * Config constructor.
      * @param array $pools
      */
@@ -27,15 +22,11 @@ final class Config
             $driver = $spec['driver'] ?? InMemoryDriver::class;
             $options = $spec['options'] ?? [];
 
-            $this->drivers[] = $driver;
-
             $this->pools[$name] = [
                 'driver' => $driver,
                 'options' => $options,
             ];
         }
-
-        array_unique($this->drivers);
     }
 
     /**
@@ -47,11 +38,8 @@ final class Config
         return $this->pools[$name];
     }
 
-    /**
-     * @return array
-     */
-    public function drivers(): array
+    public function pools(): array
     {
-        $this->drivers;
+        return array_keys($this->pools);
     }
 }

@@ -28,8 +28,8 @@ final class CacheItemPoolSubManagerFactory implements SubManagerFactoryInterface
 
         /** @var Config $config */
         $config = $container->get(Config::class);
-        foreach ($config->drivers() as $driver) {
-            $serviceManagerConfigurator->addService($driver, CacheItemPoolFactory::class);
+        foreach ($config->pools() as $pool) {
+            $serviceManagerConfigurator->addService($pool, CacheItemPoolFactory::class);
         }
 
         return new CacheItemPoolSubManager(
