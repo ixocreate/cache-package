@@ -6,6 +6,7 @@ use Ixocreate\Contract\Application\ConfiguratorRegistryInterface;
 use Ixocreate\Contract\Application\PackageInterface;
 use Ixocreate\Contract\Application\ServiceRegistryInterface;
 use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Package\Cache\BootstrapItem\CacheableBootstrapItem;
 
 final class Package implements PackageInterface
 {
@@ -29,7 +30,9 @@ final class Package implements PackageInterface
      */
     public function getBootstrapItems(): ?array
     {
-        return null;
+        return [
+            CacheableBootstrapItem::class
+        ];
     }
 
     /**

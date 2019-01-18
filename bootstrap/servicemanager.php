@@ -13,3 +13,4 @@ $serviceManager->addService(CacheManager::class, CacheManagerFactory::class);
 $serviceManager->addService(Config::class, ConfigFactory::class);
 $serviceManager->addSubManager(CacheItemPoolSubManager::class, CacheItemPoolSubManagerFactory::class);
 $serviceManager->addSubManager(CacheSubManager::class, CacheSubManagerFactory::class);
+$serviceManager->addSubManager(CacheableSubManager::class);
