@@ -1,4 +1,10 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
+
 declare(strict_types=1);
 
 namespace Ixocreate\Package\Cache;
@@ -15,6 +21,7 @@ final class CacheableConfigurator implements ConfiguratorInterface
      * @var SubManagerConfigurator
      */
     private $subManagerConfigurator;
+
     /**
      * MiddlewareConfigurator constructor.
      */

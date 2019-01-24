@@ -1,5 +1,12 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
+
 declare(strict_types=1);
+
 namespace Ixocreate\Package\Cache\Factory;
 
 use Ixocreate\Contract\Cache\CacheInterface;
@@ -12,7 +19,6 @@ use Ixocreate\ServiceManager\SubManager\SubManagerConfigurator;
 
 final class CacheSubManagerFactory implements SubManagerFactoryInterface
 {
-
     /**
      * @param ServiceManagerInterface $container
      * @param $requestedName

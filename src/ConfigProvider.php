@@ -1,4 +1,10 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
+
 declare(strict_types=1);
 
 namespace Ixocreate\Package\Cache;
@@ -8,7 +14,6 @@ use Ixocreate\Contract\Application\ConfigProviderInterface;
 
 final class ConfigProvider implements ConfigProviderInterface, ConfigExampleInterface
 {
-
     /**
      * @return string
      */
@@ -31,7 +36,7 @@ final class ConfigProvider implements ConfigProviderInterface, ConfigExampleInte
     public function __invoke(): array
     {
         return [
-            'cache' => []
+            'cache' => [],
         ];
     }
 }

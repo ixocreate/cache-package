@@ -1,5 +1,12 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
+
 declare(strict_types=1);
+
 namespace Ixocreate\Package\Cache;
 
 use Ixocreate\Contract\Application\ConfiguratorRegistryInterface;
@@ -10,7 +17,6 @@ use Ixocreate\Package\Cache\BootstrapItem\CacheableBootstrapItem;
 
 final class Package implements PackageInterface
 {
-
     /**
      * @param ConfiguratorRegistryInterface $configuratorRegistry
      */
@@ -31,7 +37,7 @@ final class Package implements PackageInterface
     public function getBootstrapItems(): ?array
     {
         return [
-            CacheableBootstrapItem::class
+            CacheableBootstrapItem::class,
         ];
     }
 
@@ -41,7 +47,7 @@ final class Package implements PackageInterface
     public function getConfigProvider(): ?array
     {
         return [
-            ConfigProvider::class
+            ConfigProvider::class,
         ];
     }
 

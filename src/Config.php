@@ -1,4 +1,10 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
+
 declare(strict_types=1);
 
 namespace Ixocreate\Package\Cache;
@@ -40,6 +46,6 @@ final class Config
 
     public function pools(): array
     {
-        return array_keys($this->pools);
+        return \array_keys($this->pools);
     }
 }

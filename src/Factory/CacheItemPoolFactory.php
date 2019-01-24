@@ -1,5 +1,12 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
+
 declare(strict_types=1);
+
 namespace Ixocreate\Package\Cache\Factory;
 
 use Ixocreate\Contract\Cache\DriverInterface;
@@ -16,8 +23,8 @@ final class CacheItemPoolFactory implements FactoryInterface
 
         $spec = $config->get($requestedName);
         $driver = $spec['driver'];
-        $implements = class_implements($driver);
-        if (!in_array(DriverInterface::class, $implements)) {
+        $implements = \class_implements($driver);
+        if (!\in_array(DriverInterface::class, $implements)) {
             //TODO Exception
         }
 
