@@ -12,10 +12,10 @@
   "prefer-stable": true,
   "require": {
     "php": "^7.1",
-    "ixocreate/cache": "=1.0.0-alpha1",
-    "ixocreate/config": "=1.0.0-alpha2",
-    "ixocreate/contract": "=1.0.0-alpha2",
-    "ixocreate/servicemanager": "=1.0.0-alpha2"
+    "ixocreate/cache": "dev-develop",
+    "ixocreate/config": "dev-develop",
+    "ixocreate/contract": "dev-develop",
+    "ixocreate/servicemanager": "dev-develop"
   },
   "require-dev": {
     "ext-pdo": "*",
