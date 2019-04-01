@@ -9,10 +9,9 @@ declare(strict_types=1);
 
 namespace Ixocreate\Package\Cache;
 
-use Ixocreate\Contract\Application\ConfigExampleInterface;
 use Ixocreate\Contract\Application\ConfigProviderInterface;
 
-final class ConfigProvider implements ConfigProviderInterface, ConfigExampleInterface
+final class ConfigProvider implements ConfigProviderInterface
 {
     /**
      * @return string
