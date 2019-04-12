@@ -13,7 +13,7 @@ use Ixocreate\Contract\Application\ConfiguratorRegistryInterface;
 use Ixocreate\Contract\Application\PackageInterface;
 use Ixocreate\Contract\Application\ServiceRegistryInterface;
 use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Package\Cache\BootstrapItem\CacheableBootstrapItem;
+use Ixocreate\Package\Cache\BootstrapItem\CacheBootstrapItem;
 
 final class Package implements PackageInterface
 {
@@ -37,7 +37,7 @@ final class Package implements PackageInterface
     public function getBootstrapItems(): ?array
     {
         return [
-            CacheableBootstrapItem::class,
+            CacheBootstrapItem::class,
         ];
     }
 
@@ -46,9 +46,7 @@ final class Package implements PackageInterface
      */
     public function getConfigProvider(): ?array
     {
-        return [
-            ConfigProvider::class,
-        ];
+        return null;
     }
 
     /**

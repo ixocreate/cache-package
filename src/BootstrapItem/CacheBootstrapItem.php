@@ -11,16 +11,16 @@ namespace Ixocreate\Package\Cache\BootstrapItem;
 
 use Ixocreate\Contract\Application\BootstrapItemInterface;
 use Ixocreate\Contract\Application\ConfiguratorInterface;
-use Ixocreate\Package\Cache\CacheableConfigurator;
+use Ixocreate\Package\Cache\CacheConfigurator;
 
-final class CacheableBootstrapItem implements BootstrapItemInterface
+final class CacheBootstrapItem implements BootstrapItemInterface
 {
     /**
      * @return mixed
      */
     public function getConfigurator(): ConfiguratorInterface
     {
-        return new CacheableConfigurator();
+        return new CacheConfigurator();
     }
 
     /**

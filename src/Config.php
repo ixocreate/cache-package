@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 namespace Ixocreate\Package\Cache;
 
-use Ixocreate\Cache\Driver\InMemoryDriver;
+use Ixocreate\Contract\Application\SerializableServiceInterface;
 
-final class Config
+final class Config implements SerializableServiceInterface
 {
     /**
      * @var array
@@ -24,28 +24,42 @@ final class Config
      */
     public function __construct(array $pools)
     {
-        foreach ($pools as $name => $spec) {
-            $driver = $spec['driver'] ?? InMemoryDriver::class;
-            $options = $spec['options'] ?? [];
-
-            $this->pools[$name] = [
-                'driver' => $driver,
-                'options' => $options,
-            ];
-        }
+        $this->pools = $pools;
     }
 
     /**
      * @param string $name
-     * @return array
+     * @return OptionInterface
      */
-    public function get(string $name): array
+    public function get(string $name): OptionInterface
     {
         return $this->pools[$name];
     }
 
+    /**
+     * @return OptionInterface[]
+     */
     public function pools(): array
     {
-        return \array_keys($this->pools);
+        return $this->pools;
+    }
+
+    /**
+     * @return string|void
+     */
+    public function serialize()
+    {
+        return serialize([
+            'pools' => $this->pools
+        ]);
+    }
+
+    /**
+     * @param string $serialized
+     */
+    public function unserialize($serialized)
+    {
+        $unserialize = unserialize($serialized);
+        $this->pools = $unserialize['pools'];
     }
 }

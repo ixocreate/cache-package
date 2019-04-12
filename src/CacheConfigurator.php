@@ -15,28 +15,30 @@ use Ixocreate\Contract\Cache\CacheableInterface;
 use Ixocreate\ServiceManager\Factory\AutowireFactory;
 use Ixocreate\ServiceManager\SubManager\SubManagerConfigurator;
 
-final class CacheableConfigurator implements ConfiguratorInterface
+final class CacheConfigurator implements ConfiguratorInterface
 {
     /**
      * @var SubManagerConfigurator
      */
-    private $subManagerConfigurator;
+    private $cacheablesubManagerConfigurator;
+
+    private $pools = [];
 
     /**
      * MiddlewareConfigurator constructor.
      */
     public function __construct()
     {
-        $this->subManagerConfigurator = new SubManagerConfigurator(CacheableSubManager::class, CacheableInterface::class);
+        $this->cacheablesubManagerConfigurator = new SubManagerConfigurator(CacheableSubManager::class, CacheableInterface::class);
     }
 
     /**
      * @param string $directory
      * @param bool $recursive
      */
-    public function addDirectory(string $directory, bool $recursive = true): void
+    public function addCacheableDirectory(string $directory, bool $recursive = true): void
     {
-        $this->subManagerConfigurator->addDirectory($directory, $recursive);
+        $this->cacheablesubManagerConfigurator->addDirectory($directory, $recursive);
     }
 
     /**
@@ -45,7 +47,16 @@ final class CacheableConfigurator implements ConfiguratorInterface
      */
     public function addCacheable(string $cacheable, string $factory = AutowireFactory::class): void
     {
-        $this->subManagerConfigurator->addFactory($cacheable, $factory);
+        $this->cacheablesubManagerConfigurator->addFactory($cacheable, $factory);
+    }
+
+    /**
+     * @param string $name
+     * @param OptionInterface $option
+     */
+    public function addCache(string $name, OptionInterface $option): void
+    {
+        $this->pools[$name] = $option;
     }
 
     /**
@@ -54,6 +65,8 @@ final class CacheableConfigurator implements ConfiguratorInterface
      */
     public function registerService(ServiceRegistryInterface $serviceRegistry): void
     {
-        $this->subManagerConfigurator->registerService($serviceRegistry);
+        $this->cacheablesubManagerConfigurator->registerService($serviceRegistry);
+
+        $serviceRegistry->add(Config::class, new Config($this->pools));
     }
 }

@@ -21,16 +21,8 @@ final class CacheItemPoolFactory implements FactoryInterface
         /** @var Config $config */
         $config = $container->get(Config::class);
 
-        $spec = $config->get($requestedName);
-        $driver = $spec['driver'];
-        $implements = \class_implements($driver);
-        if (!\in_array(DriverInterface::class, $implements)) {
-            //TODO Exception
-        }
+        $option = $config->get($requestedName);
 
-        /** @var DriverInterface $driver */
-        $driver = new $driver($requestedName, $spec['options']);
-
-        return $driver->create();
+        return $option->create($requestedName, $container);
     }
 }
