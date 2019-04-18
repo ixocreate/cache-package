@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace Ixocreate\Cache\Package\Factory;
 
-use Ixocreate\Cache\DriverInterface;
 use Ixocreate\ServiceManager\FactoryInterface;
 use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Ixocreate\Cache\Package\Config;

@@ -34,7 +34,7 @@ final class InMemory implements OptionInterface
      */
     public function serialize()
     {
-        return serialize([]);
+        return \serialize([]);
     }
 
     /**
@@ -42,6 +42,5 @@ final class InMemory implements OptionInterface
      */
     public function unserialize($serialized)
     {
-
     }
 }

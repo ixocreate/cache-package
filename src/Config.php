@@ -49,8 +49,8 @@ final class Config implements SerializableServiceInterface
      */
     public function serialize()
     {
-        return serialize([
-            'pools' => $this->pools
+        return \serialize([
+            'pools' => $this->pools,
         ]);
     }
 
@@ -59,7 +59,7 @@ final class Config implements SerializableServiceInterface
      */
     public function unserialize($serialized)
     {
-        $unserialize = unserialize($serialized);
+        $unserialize = \unserialize($serialized);
         $this->pools = $unserialize['pools'];
     }
 }

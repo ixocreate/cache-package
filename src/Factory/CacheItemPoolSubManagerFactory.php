@@ -14,7 +14,7 @@ use Ixocreate\ServiceManager\SubManager\SubManagerFactoryInterface;
 use Ixocreate\ServiceManager\SubManager\SubManagerInterface;
 use Ixocreate\Cache\Package\CacheItemPoolSubManager;
 use Ixocreate\Cache\Package\Config;
-use Ixocreate\ServiceManager\SubManager\SubManagerConfigurator;
+use Ixocreate\Application\Service\SubManagerConfigurator;
 use Psr\Cache\CacheItemPoolInterface;
 
 final class CacheItemPoolSubManagerFactory implements SubManagerFactoryInterface
@@ -34,7 +34,7 @@ final class CacheItemPoolSubManagerFactory implements SubManagerFactoryInterface
 
         /** @var Config $config */
         $config = $container->get(Config::class);
-        foreach (array_keys($config->pools()) as $pool) {
+        foreach (\array_keys($config->pools()) as $pool) {
             $serviceManagerConfigurator->addService($pool, CacheItemPoolFactory::class);
         }
 

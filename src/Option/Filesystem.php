@@ -78,7 +78,7 @@ final class Filesystem implements OptionInterface
      */
     public function serialize()
     {
-        return serialize([
+        return \serialize([
             'defaultLifetime' => $this->defaultLifetime,
             'directory' => $this->directory,
         ]);
@@ -89,7 +89,7 @@ final class Filesystem implements OptionInterface
      */
     public function unserialize($serialized)
     {
-        $unserialized = unserialize($serialized);
+        $unserialized = \unserialize($serialized);
         $this->defaultLifetime = $unserialized['defaultLifetime'];
         $this->directory = $unserialized['directory'];
     }

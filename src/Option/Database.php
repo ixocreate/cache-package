@@ -84,7 +84,7 @@ final class Database implements OptionInterface
      */
     public function serialize()
     {
-        return serialize([
+        return \serialize([
             'defaultLifetime' => $this->defaultLifetime,
             'connection' => $this->connection,
         ]);
@@ -95,7 +95,7 @@ final class Database implements OptionInterface
      */
     public function unserialize($serialized)
     {
-        $unserialized = unserialize($serialized);
+        $unserialized = \unserialize($serialized);
         $this->defaultLifetime = $unserialized['defaultLifetime'];
         $this->connection = $unserialized['connection'];
     }

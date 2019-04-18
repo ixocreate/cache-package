@@ -59,7 +59,7 @@ final class Chain implements OptionInterface
      */
     public function serialize()
     {
-        return serialize([
+        return \serialize([
             'caches' => $this->caches,
         ]);
     }
@@ -69,7 +69,7 @@ final class Chain implements OptionInterface
      */
     public function unserialize($serialized)
     {
-        $unserialized = unserialize($serialized);
+        $unserialized = \unserialize($serialized);
         $this->caches = $unserialized['caches'];
     }
 }
