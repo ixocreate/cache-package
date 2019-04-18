@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
-namespace Ixocreate\Package\Cache;
+namespace Ixocreate\Cache\Package;
 
 use Ixocreate\Cache\CacheManager;
-use Ixocreate\Package\Cache\Factory\CacheItemPoolSubManagerFactory;
-use Ixocreate\Package\Cache\Factory\CacheManagerFactory;
-use Ixocreate\Package\Cache\Factory\CacheSubManagerFactory;
+use Ixocreate\Cache\Package\Factory\CacheItemPoolSubManagerFactory;
+use Ixocreate\Cache\Package\Factory\CacheManagerFactory;
+use Ixocreate\Cache\Package\Factory\CacheSubManagerFactory;
 
 /** @var \Ixocreate\ServiceManager\ServiceManagerConfigurator $serviceManager */
 $serviceManager->addService(CacheManager::class, CacheManagerFactory::class);

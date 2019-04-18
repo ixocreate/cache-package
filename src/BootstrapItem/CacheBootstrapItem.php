@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Cache\BootstrapItem;
+namespace Ixocreate\Cache\Package\BootstrapItem;
 
-use Ixocreate\Application\BootstrapItemInterface;
+use Ixocreate\Application\Bootstrap\BootstrapItemInterface;
 use Ixocreate\Application\ConfiguratorInterface;
-use Ixocreate\Package\Cache\CacheConfigurator;
+use Ixocreate\Cache\Package\CacheConfigurator;
 
 final class CacheBootstrapItem implements BootstrapItemInterface
 {

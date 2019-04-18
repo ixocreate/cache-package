@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ixocreate\\Package\\Cache\\": "src/"
+            "Ixocreate\\Cache\\Package\\": "src/"
         }
     },
     "scripts": {

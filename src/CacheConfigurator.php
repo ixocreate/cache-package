@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Cache;
+namespace Ixocreate\Cache\Package;
 
 use Ixocreate\Application\ConfiguratorInterface;
 use Ixocreate\Application\ServiceRegistryInterface;

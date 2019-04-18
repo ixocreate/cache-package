@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Cache;
+namespace Ixocreate\Cache\Package;
 
 use Ixocreate\Application\ConfiguratorRegistryInterface;
-use Ixocreate\Application\PackageInterface;
+use Ixocreate\Application\Package\PackageInterface;
 use Ixocreate\Application\ServiceRegistryInterface;
 use Ixocreate\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Package\Cache\BootstrapItem\CacheBootstrapItem;
+use Ixocreate\Cache\Package\Bootstrap\CacheBootstrapItem;
 
 final class Package implements PackageInterface
 {
