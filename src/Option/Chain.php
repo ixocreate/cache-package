@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Cache\Package\Option;
+namespace Ixocreate\Cache\Option;
 
 use Ixocreate\Cache\CacheItemPool;
 use Ixocreate\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Cache\Package\CacheItemPoolSubManager;
-use Ixocreate\Cache\Package\OptionInterface;
+use Ixocreate\Cache\CacheItemPoolSubManager;
+use Ixocreate\Cache\OptionInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\Adapter\ChainAdapter;
 

@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Cache\Package\Factory;
+namespace Ixocreate\Cache\Factory;
 
 use Ixocreate\ServiceManager\FactoryInterface;
 use Ixocreate\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Cache\Package\Config;
+use Ixocreate\Cache\Config;
 
 final class CacheItemPoolFactory implements FactoryInterface
 {

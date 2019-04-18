@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Cache\Package;
+namespace Ixocreate\Cache;
 
 use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Psr\Cache\CacheItemPoolInterface;

@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Cache\Package\Factory;
+namespace Ixocreate\Cache\Factory;
 
 use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Ixocreate\ServiceManager\SubManager\SubManagerFactoryInterface;
 use Ixocreate\ServiceManager\SubManager\SubManagerInterface;
-use Ixocreate\Cache\Package\CacheItemPoolSubManager;
-use Ixocreate\Cache\Package\Config;
+use Ixocreate\Cache\CacheItemPoolSubManager;
+use Ixocreate\Cache\Config;
 use Ixocreate\Application\Service\SubManagerConfigurator;
 use Psr\Cache\CacheItemPoolInterface;
 

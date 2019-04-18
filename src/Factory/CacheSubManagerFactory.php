@@ -7,14 +7,14 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Cache\Package\Factory;
+namespace Ixocreate\Cache\Factory;
 
 use Ixocreate\Cache\CacheInterface;
 use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Ixocreate\ServiceManager\SubManager\SubManagerFactoryInterface;
 use Ixocreate\ServiceManager\SubManager\SubManagerInterface;
-use Ixocreate\Cache\Package\CacheSubManager;
-use Ixocreate\Cache\Package\Config;
+use Ixocreate\Cache\CacheSubManager;
+use Ixocreate\Cache\Config;
 use Ixocreate\Application\Service\SubManagerConfigurator;
 
 final class CacheSubManagerFactory implements SubManagerFactoryInterface
