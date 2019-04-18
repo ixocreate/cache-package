@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
+
 namespace Ixocreate\Cache;
 
-use Ixocreate\Cache\CacheManager;
 use Ixocreate\Cache\Factory\CacheItemPoolSubManagerFactory;
 use Ixocreate\Cache\Factory\CacheManagerFactory;
 use Ixocreate\Cache\Factory\CacheSubManagerFactory;

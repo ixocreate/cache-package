@@ -20,6 +20,7 @@ final class Config implements SerializableServiceInterface
 
     /**
      * Config constructor.
+     *
      * @param array $pools
      */
     public function __construct(array $pools)
