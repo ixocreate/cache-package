@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 namespace Ixocreate\Package\Cache\Factory;
 
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Contract\ServiceManager\SubManager\SubManagerFactoryInterface;
-use Ixocreate\Contract\ServiceManager\SubManager\SubManagerInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
+use Ixocreate\ServiceManager\SubManager\SubManagerFactoryInterface;
+use Ixocreate\ServiceManager\SubManager\SubManagerInterface;
 use Ixocreate\Package\Cache\CacheItemPoolSubManager;
 use Ixocreate\Package\Cache\Config;
 use Ixocreate\ServiceManager\SubManager\SubManagerConfigurator;

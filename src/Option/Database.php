@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace Ixocreate\Package\Cache\Option;
 
 use Ixocreate\Cache\CacheItemPool;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Database\Connection\Factory\ConnectionSubManager;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Package\Database\Connection\Factory\ConnectionSubManager;
 use Ixocreate\Package\Cache\OptionInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\Adapter\PdoAdapter;
