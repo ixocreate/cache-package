@@ -10,9 +10,9 @@ declare(strict_types=1);
 namespace Ixocreate\Cache\Factory;
 
 use Ixocreate\Cache\Cache;
+use Ixocreate\Cache\CacheItemPoolSubManager;
 use Ixocreate\ServiceManager\FactoryInterface;
 use Ixocreate\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Cache\CacheItemPoolSubManager;
 
 final class CacheFactory implements FactoryInterface
 {
