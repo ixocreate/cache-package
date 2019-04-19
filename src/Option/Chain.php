@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Cache\Option;
+namespace Ixocreate\Cache\Option;
 
 use Ixocreate\Cache\CacheItemPool;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Package\Cache\CacheItemPoolSubManager;
-use Ixocreate\Package\Cache\OptionInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Cache\CacheItemPoolSubManager;
+use Ixocreate\Cache\OptionInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\Adapter\ChainAdapter;
 
@@ -59,7 +59,7 @@ final class Chain implements OptionInterface
      */
     public function serialize()
     {
-        return serialize([
+        return \serialize([
             'caches' => $this->caches,
         ]);
     }
@@ -69,7 +69,7 @@ final class Chain implements OptionInterface
      */
     public function unserialize($serialized)
     {
-        $unserialized = unserialize($serialized);
+        $unserialized = \unserialize($serialized);
         $this->caches = $unserialized['caches'];
     }
 }

@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Cache;
+namespace Ixocreate\Cache;
 
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Psr\Cache\CacheItemPoolInterface;
 
 interface OptionInterface extends \Serializable

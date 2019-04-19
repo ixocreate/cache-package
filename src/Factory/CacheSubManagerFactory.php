@@ -7,15 +7,15 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Cache\Factory;
+namespace Ixocreate\Cache\Factory;
 
-use Ixocreate\Contract\Cache\CacheInterface;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Contract\ServiceManager\SubManager\SubManagerFactoryInterface;
-use Ixocreate\Contract\ServiceManager\SubManager\SubManagerInterface;
-use Ixocreate\Package\Cache\CacheSubManager;
-use Ixocreate\Package\Cache\Config;
-use Ixocreate\ServiceManager\SubManager\SubManagerConfigurator;
+use Ixocreate\Cache\CacheInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
+use Ixocreate\ServiceManager\SubManager\SubManagerFactoryInterface;
+use Ixocreate\ServiceManager\SubManager\SubManagerInterface;
+use Ixocreate\Cache\CacheSubManager;
+use Ixocreate\Cache\Config;
+use Ixocreate\Application\Service\SubManagerConfigurator;
 
 final class CacheSubManagerFactory implements SubManagerFactoryInterface
 {
@@ -34,7 +34,7 @@ final class CacheSubManagerFactory implements SubManagerFactoryInterface
 
         /** @var Config $config */
         $config = $container->get(Config::class);
-        foreach (array_keys($config->pools()) as $pool) {
+        foreach (\array_keys($config->pools()) as $pool) {
             $serviceManagerConfigurator->addService($pool, CacheFactory::class);
         }
 

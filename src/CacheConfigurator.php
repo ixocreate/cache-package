@@ -7,13 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Cache;
+namespace Ixocreate\Cache;
 
-use Ixocreate\Contract\Application\ConfiguratorInterface;
-use Ixocreate\Contract\Application\ServiceRegistryInterface;
-use Ixocreate\Contract\Cache\CacheableInterface;
+use Ixocreate\Application\Configurator\ConfiguratorInterface;
+use Ixocreate\Application\Service\ServiceRegistryInterface;
+use Ixocreate\Application\Service\SubManagerConfigurator;
 use Ixocreate\ServiceManager\Factory\AutowireFactory;
-use Ixocreate\ServiceManager\SubManager\SubManagerConfigurator;
 
 final class CacheConfigurator implements ConfiguratorInterface
 {
@@ -29,7 +28,10 @@ final class CacheConfigurator implements ConfiguratorInterface
      */
     public function __construct()
     {
-        $this->cacheablesubManagerConfigurator = new SubManagerConfigurator(CacheableSubManager::class, CacheableInterface::class);
+        $this->cacheablesubManagerConfigurator = new SubManagerConfigurator(
+            CacheableSubManager::class,
+            CacheableInterface::class
+        );
     }
 
     /**

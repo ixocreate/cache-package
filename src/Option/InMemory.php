@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Cache\Option;
+namespace Ixocreate\Cache\Option;
 
 use Ixocreate\Cache\CacheItemPool;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Package\Cache\OptionInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Cache\OptionInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 
@@ -34,7 +34,7 @@ final class InMemory implements OptionInterface
      */
     public function serialize()
     {
-        return serialize([]);
+        return \serialize([]);
     }
 
     /**
@@ -42,6 +42,5 @@ final class InMemory implements OptionInterface
      */
     public function unserialize($serialized)
     {
-
     }
 }

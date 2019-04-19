@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Cache\Option;
+namespace Ixocreate\Cache\Option;
 
 use Ixocreate\Cache\CacheItemPool;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Ixocreate\Database\Connection\Factory\ConnectionSubManager;
-use Ixocreate\Package\Cache\OptionInterface;
+use Ixocreate\Cache\OptionInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\Adapter\PdoAdapter;
 
@@ -84,7 +84,7 @@ final class Database implements OptionInterface
      */
     public function serialize()
     {
-        return serialize([
+        return \serialize([
             'defaultLifetime' => $this->defaultLifetime,
             'connection' => $this->connection,
         ]);
@@ -95,7 +95,7 @@ final class Database implements OptionInterface
      */
     public function unserialize($serialized)
     {
-        $unserialized = unserialize($serialized);
+        $unserialized = \unserialize($serialized);
         $this->defaultLifetime = $unserialized['defaultLifetime'];
         $this->connection = $unserialized['connection'];
     }
