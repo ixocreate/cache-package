@@ -12,8 +12,8 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.1",
-        "ixocreate/application": "dev-consolidate",
-        "ixocreate/cache": "dev-consolidate"
+        "ixocreate/application": "dev-develop",
+        "ixocreate/cache": "dev-develop"
     },
     "require-dev": {
         "ext-pdo": "*",
