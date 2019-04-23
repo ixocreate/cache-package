@@ -1,5 +1,5 @@
 {
-    "name": "ixocreate/cache",
+    "name": "ixocreate/cache-package",
     "description": "IXOCREATE Cache Package",
     "license": "MIT",
     "type": "library",
@@ -18,7 +18,7 @@
     "require-dev": {
         "ext-pdo": "*",
         "doctrine/dbal": "^2.9",
-        "ixocreate/coding-standard": "^1.0",
+        "ixocreate/coding-standard": "^2.0",
         "php-coveralls/php-coveralls": "^2.1",
         "phpunit/phpunit": "^7.0"
     },
@@ -26,6 +26,9 @@
         "psr-4": {
             "Ixocreate\\Cache\\": "src/"
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "scripts": {
         "fix-cs": "vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --config vendor/ixocreate/coding-standard/.php_cs"

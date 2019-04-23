@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace Ixocreate\Cache\Option;
 
 use Ixocreate\Cache\CacheItemPool;
-use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Ixocreate\Cache\OptionInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
