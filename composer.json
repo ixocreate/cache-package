@@ -8,11 +8,9 @@
             "name": "IXOCREATE"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^7.1",
-        "ixocreate/application": "^0.1",
+        "ixocreate/application": "~0.1.0|~0.2.0",
         "ixocreate/cache": "^0.1"
     },
     "require-dev": {

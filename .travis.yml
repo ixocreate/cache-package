@@ -15,7 +15,7 @@ install:
 
 script:
   - if [ $TRAVIS_PHP_VERSION = '7.2' ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; else vendor/bin/phpunit; fi
-  - if [ $TRAVIS_PHP_VERSION = '7.2' ]; then vendor/bin/php-cs-fixer fix --config=vendor/ixocreate/coding-standard/.php_cs -v --dry-run --using-cache=no --path-mode=intersection `git diff --name-only --diff-filter=ACMRTUXB $TRAVIS_COMMIT_RANGE`; fi
+  - if [ $TRAVIS_PHP_VERSION = '7.2' ]; then vendor/bin/php-cs-fixer fix --config=vendor/ixocreate/coding-standard/.php_cs -v --diff --dry-run --using-cache=no; fi
 
 after_success:
   - if [ $TRAVIS_PHP_VERSION = '7.2' ]; then php vendor/bin/php-coveralls -v; fi
@@ -23,4 +23,7 @@ after_success:
 notifications:
   email: false
   slack:
-    secure: "XTyqUp/NoUR79H0X9lPaukc5EO5Ud07fIpo5Flk251bdUNZ7J/+IqCuZGbVk4ELWDKwXj+ssFGYJ8yniQNXJO3xLsX95UvYISMjk02D7NB85sP024UsxHoS1/+WLcAMxHSfJPsZomPZNzUQPTJGQAXuv7/tPiNVpxK65lGCTZJsA6uzKIZBM4YVYx+rMRts1mDdoamQzwvUWLLtwoqty72u5oc7yI4HF/Wa5OO/R33l4wevZpEMj6Ng+Xb7VX9aDPG7/sC5H+JVGdD+qAM3XmIJHB/VQfYohb4j+LxmCM2iqmHK7v1qzf+MffHaaI1FBGFMLo6cNj8KUZ7gil4yU1nRZFDep436m1l+s+xYhHBi7CBnwMDSr7aJDgW1S/G7ugERn0c4Po+03I+m69t7R9qwk5BiCRP5OrfKrVQCCCuE4dspMO+k2rsk9gBlMN6eOZswgGoLP+IY8YO8KmpglMA18yIpR+sFkfFpSXc/MTlzuwCAemyTtr0kDikkBOMltMLejVHPOV4noxawj0C/8xZs9ujoht7QRD5EXrsV9cJak55sPW2IK/Bzkp+tchTIiiBXj8Ppkk+91VxKpfHXW3KyNB+9TRRAnAQNe0d2wzFAkJoHxw1LdPPhguLJuoscW2JPWSb9tO1C7Q/rO74dAP/9jiOHCM+dMOss1VsibC50="
+    on_success: change
+    on_failure: always
+    rooms:
+      secure: "bE8+qQTXt64xijoIrWgfr0347Om6hvv1f9a7WB/QPigAVDV3Z/9LNOYxrVZHOvKu88xxmk+Qc03YNnhILC0uirRrOXiJ92xk5G4r2KpbOAbwGpog9D12su73yTipEL70EMcAfsSXUroWHB4VcAnpIPUWh/8HJo8sUecCcSqTIWsyZLP4X+8QaDaZEnf9zFoE71evPtmMokQqAUZeKdfXwxLUsIFaPeQUBIz9wAAd2Rfse6dSZpTIMw4pwQVX06zj/DRDIQnI9BHzXcNhYJ+YXw0dKyNJj6bjfhcQdbmBaJm3K7/X8PMwIL755Ce9B82ie0ogPY3CI8NLn9ZBAhPPY6C/Q9RbAFW+k1E2JbVh4qaUfOBQZuMt32H7efQdtuUcfTzUDikHHLdy89Jlb8vLN8gbD7v0Wk+WaJ8TDAAIo7CIFlxcQvvODnRENL2MwF7M4oDtnyZ+Mpc8S3OW2b23+/FDIuWzdjB5f9bwrUpYi6q39pRge56XRSCmCR+eylcFGmaM3BXPLJMLDhp2rqjjrYGW7gR669WnaaNAOL8f1Woet3zD36qYmUhPnxKWZTPLCL41h86ysWwWXYYqKvmW5Sj18fWdW2u7JIwQCJpuVQnNDZJssvQHoZmRec42hmByxIIy5c03rDuXuSHfxuvuY6UzjgQEoNgq+2D5KQRVoRo="
