@@ -2,6 +2,9 @@
 
 ## [Unreleased](https://github.com/ixocreate/cache-package/compare/0.1.2...develop)
 
+## Added
+- require "ixocreate/database-package" in composer.json
+
 ## [v0.1.2 (2019-05-03)](https://github.com/ixocreate/cache-package/compare/0.1.1...0.1.2)
 ### Added
 - Compatibility with Application v0.2
