@@ -27,7 +27,7 @@ class ChainTest extends TestCase
     {
         $this->chain = new Chain([
             'foo',
-            'bar'
+            'bar',
         ]);
     }
 
@@ -43,8 +43,8 @@ class ChainTest extends TestCase
         $serialize = \serialize([
             'caches' => [
                 'foo',
-                'bar'
-            ]
+                'bar',
+            ],
         ]);
 
         $this->assertSame($serialize, $this->chain->serialize());
@@ -54,7 +54,7 @@ class ChainTest extends TestCase
     {
         $serialize = \serialize([
                 'foo',
-                'bar'
+                'bar',
         ]);
 
         $chainSerialize = $this->chain->serialize();
@@ -74,7 +74,7 @@ class ChainTest extends TestCase
         $cacheItemPoolSubManager->method('get')->willReturnCallback(function ($request) {
             $pool = [
                 'foo' => $this->createMock(CacheItemPoolInterface::class),
-                'bar' => new CacheItemPool($this->createMock(CacheItemPoolInterface::class))
+                'bar' => new CacheItemPool($this->createMock(CacheItemPoolInterface::class)),
             ];
             return $pool[$request];
         });

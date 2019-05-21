@@ -48,7 +48,7 @@ class DatabaseTest extends TestCase
     {
         $serialize = \serialize([
             'defaultLifetime' => 100,
-            'connection' => 'foo'
+            'connection' => 'foo',
         ]);
 
         $this->assertSame($serialize, $this->database->serialize());
@@ -58,7 +58,7 @@ class DatabaseTest extends TestCase
     {
         $serialize = \serialize([
             'defaultLifetime' => 100,
-            'connection' => 'foo'
+            'connection' => 'foo',
         ]);
 
         $databaseSerialize = $this->database->serialize();
@@ -67,7 +67,7 @@ class DatabaseTest extends TestCase
 
         $result = [
             'defaultLifetime' => $this->database->defaultLifetime(),
-            'connection' => $this->database->connection()
+            'connection' => $this->database->connection(),
         ];
 
         $this->assertSame(\unserialize($serialize), $result);

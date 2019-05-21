@@ -45,7 +45,7 @@ class ConfigTest extends TestCase
     public function testSerialize()
     {
         $serialize = \serialize([
-            'pools' => $this->pools
+            'pools' => $this->pools,
         ]);
 
         $this->assertSame($serialize, $this->config->serialize());
@@ -59,7 +59,6 @@ class ConfigTest extends TestCase
 
         $this->config->unserialize($configSerialize);
 
-        $this->assertSame(unserialize($serialize), $this->config->pools());
-
+        $this->assertSame(\unserialize($serialize), $this->config->pools());
     }
 }

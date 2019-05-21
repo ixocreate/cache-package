@@ -11,7 +11,6 @@ namespace Ixocreate\Test\Cache;
 
 use Ixocreate\Cache\Option\Filesystem;
 use Ixocreate\ServiceManager\ServiceManagerInterface;
-use Ixocreate\ServiceManager\SubManager\SubManagerInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Cache\CacheItemPoolInterface;
 
@@ -21,7 +20,6 @@ class FilesystemTest extends TestCase
      * @var Filesystem
      */
     private $filesystem;
-
 
     public function setUp()
     {
@@ -58,7 +56,7 @@ class FilesystemTest extends TestCase
     {
         $serialize = \serialize([
             'defaultLifetime' => 100,
-            'directory' => 'foo'
+            'directory' => 'foo',
         ]);
 
         $this->assertSame($serialize, $this->filesystem->serialize());
@@ -68,7 +66,7 @@ class FilesystemTest extends TestCase
     {
         $serialize = \serialize([
             'defaultLifetime' => 100,
-            'directory' => 'foo'
+            'directory' => 'foo',
         ]);
 
         $filesystemSerialize = $this->filesystem->serialize();
@@ -77,7 +75,7 @@ class FilesystemTest extends TestCase
 
         $result = [
             'defaultLifetime' => $this->filesystem->defaultLifetime(),
-            'directory' => $this->filesystem->directory()
+            'directory' => $this->filesystem->directory(),
         ];
 
         $this->assertSame(\unserialize($serialize), $result);
