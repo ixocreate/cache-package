@@ -21,8 +21,7 @@
         "doctrine/dbal": "^2.9",
         "ixocreate/coding-standard": "^2.0",
         "ixocreate/database-package": "^0.2",
-        "php-coveralls/php-coveralls": "^2.1",
-        "phpunit/phpunit": "^7.0"
+        "ixocreate/test": "dev-develop"
     },
     "suggest": {
         "ixocreate/database-package": "Allows to use database as cache storage"
