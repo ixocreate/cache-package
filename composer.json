@@ -24,7 +24,7 @@
         "ixocreate/test": "dev-develop"
     },
     "suggest": {
-        "ixocreate/database-package": "Allows to use database as cache storage"
+        "ixocreate/database-package": "Allows to use database as cache storage",
         "ext-memcached": "Allows to use memcached as cache storage"
     },
     "autoload": {
