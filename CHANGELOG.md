@@ -1,9 +1,11 @@
 # Release Notes
 
-## [Unreleased](https://github.com/ixocreate/cache-package/compare/0.1.2...develop)
+## [Unreleased](https://github.com/ixocreate/cache-package/compare/0.1.3...develop)
 
-## Added
+## [v0.1.3 (2019-05-03)](https://github.com/ixocreate/cache-package/compare/0.1.2...0.1.3)
+### Added
 - require "ixocreate/database-package" in composer.json
+- new memcached option
 
 ## [v0.1.2 (2019-05-03)](https://github.com/ixocreate/cache-package/compare/0.1.1...0.1.2)
 ### Added

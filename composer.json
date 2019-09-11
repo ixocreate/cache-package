@@ -25,6 +25,7 @@
     },
     "suggest": {
         "ixocreate/database-package": "Allows to use database as cache storage"
+        "ext-memcached": "Allows to use memcached as cache storage"
     },
     "autoload": {
         "psr-4": {
