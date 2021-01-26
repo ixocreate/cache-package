@@ -1,6 +1,10 @@
 # Release Notes
 
-## [Unreleased](https://github.com/ixocreate/cache-package/compare/0.1.4...develop)
+## [Unreleased](https://github.com/ixocreate/cache-package/compare/0.2.0...develop)
+
+## [v0.2.0 (2021-01-21)](https://github.com/ixocreate/event-package/compare/0.1.4...0.2.0)
+### Update
+- Update to Application 0.3
 
 ## [v0.1.4 (2019-10-09)](https://github.com/ixocreate/cache-package/compare/0.1.3...0.1.4)
 ### Added
