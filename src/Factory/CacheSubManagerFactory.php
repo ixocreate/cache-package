@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Cache\Factory;
 
-use Ixocreate\Application\Service\SubManagerConfigurator;
+use Ixocreate\Application\ServiceManager\SubManagerConfigurator;
 use Ixocreate\Cache\CacheInterface;
 use Ixocreate\Cache\CacheSubManager;
 use Ixocreate\Cache\Config;

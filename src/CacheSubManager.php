@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace Ixocreate\Cache;
 
-use Ixocreate\ServiceManager\SubManager\SubManager;
+use Ixocreate\ServiceManager\SubManager\AbstractSubManager;
 
-final class CacheSubManager extends SubManager
+final class CacheSubManager extends AbstractSubManager
 {
 }
