@@ -21,7 +21,7 @@ class MemcachedTest extends TestCase
      */
     private $memcached;
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!\extension_loaded('memcached')) {
             $this->markTestSkipped('The memcached extension is not available.');

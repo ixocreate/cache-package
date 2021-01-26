@@ -21,7 +21,7 @@ class FilesystemTest extends TestCase
      */
     private $filesystem;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->filesystem = new Filesystem('foo', 100);
     }

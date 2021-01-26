@@ -22,7 +22,7 @@ class DatabaseTest extends TestCase
      */
     private $database;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->database = new Database('foo', 100);
     }

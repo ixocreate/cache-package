@@ -23,7 +23,7 @@ class ChainTest extends TestCase
      */
     private $chain;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->chain = new Chain([
             'foo',

@@ -25,7 +25,7 @@ class ConfigTest extends TestCase
      */
     private $pools = [];
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->pools['foo'] = $this->createMock(OptionInterface::class);
 

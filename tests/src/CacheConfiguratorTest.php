@@ -22,7 +22,7 @@ class CacheConfiguratorTest extends TestCase
      */
     private $cacheConfigurator;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->cacheConfigurator = new CacheConfigurator();
     }

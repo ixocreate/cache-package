@@ -20,7 +20,7 @@ class CacheBootstrapItemTest extends TestCase
      */
     private $cacheBootstrapItem;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->cacheBootstrapItem = new CacheBootstrapItem();
     }

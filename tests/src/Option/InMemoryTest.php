@@ -21,7 +21,7 @@ class InMemoryTest extends TestCase
      */
     private $inMemory;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->inMemory = new InMemory();
     }
