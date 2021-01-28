@@ -40,8 +40,7 @@ final class CacheItemPoolSubManagerFactory implements SubManagerFactoryInterface
 
         return new CacheItemPoolSubManager(
             $container,
-            $serviceManagerConfigurator->getServiceManagerConfig(),
-            CacheItemPoolInterface::class
+            $serviceManagerConfigurator->getServiceManagerConfig()
         );
     }
 }

@@ -13,4 +13,8 @@ use Ixocreate\ServiceManager\SubManager\AbstractSubManager;
 
 final class CacheSubManager extends AbstractSubManager
 {
+    public static function validation(): ?string
+    {
+        return CacheInterface::class;
+    }
 }

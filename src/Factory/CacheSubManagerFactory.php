@@ -40,8 +40,7 @@ final class CacheSubManagerFactory implements SubManagerFactoryInterface
 
         return new CacheSubManager(
             $container,
-            $serviceManagerConfigurator->getServiceManagerConfig(),
-            CacheInterface::class
+            $serviceManagerConfigurator->getServiceManagerConfig()
         );
     }
 }
