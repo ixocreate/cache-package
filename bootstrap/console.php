@@ -14,4 +14,3 @@ use Ixocreate\Cache\Console\ClearCacheConsole;
 
 /** @var ConsoleConfigurator $console */
 $console->addCommand(ClearCacheConsole::class);
-
