@@ -11,19 +11,17 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^7.2 || ^8.0",
-        "ixocreate/application": "dev-develop",
-        "ixocreate/cache": "dev-develop"
+        "ixocreate/application": "^0.3.0",
+        "ixocreate/cache": "^0.2.0"
     },
     "require-dev": {
         "ext-pdo": "*",
         "doctrine/dbal": "^2.9",
         "ixocreate/coding-standard": "^2.0",
-        "ixocreate/database-package": "dev-develop",
-        "ixocreate/test": "^0.1"
+        "ixocreate/database-package": "^0.3.0",
+        "ixocreate/test": "^0.2"
     },
     "suggest": {
         "ixocreate/database-package": "Allows to use database as cache storage",
