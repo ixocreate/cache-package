@@ -19,7 +19,7 @@
     "require-dev": {
         "ext-pdo": "*",
         "doctrine/dbal": "^2.9",
-        "ixocreate/coding-standard": "^2.0",
+        "ixocreate/coding-standard": "^3.0",
         "ixocreate/database-package": "^0.3.0",
         "ixocreate/test": "^0.2"
     },

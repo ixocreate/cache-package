@@ -2,7 +2,6 @@ language: php
 sudo: false
 
 php:
-  - "7.3"
   - "7.4"
   - "8.0"
   - "8.1"
@@ -15,7 +14,6 @@ cache:
     - $HOME/.composer/cache
 
 install:
-  - if [ $TRAVIS_PHP_VERSION = '7.3' ]; then composer self-update --1 --no-progress --no-interaction; fi
   - composer install --prefer-dist --no-interaction
 
 script:
