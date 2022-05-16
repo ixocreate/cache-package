@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Test\Cache;
+namespace Ixocreate\Test\Cache\Option;
 
 use Ixocreate\Cache\Option\Redis;
 use Ixocreate\ServiceManager\ServiceManagerInterface;

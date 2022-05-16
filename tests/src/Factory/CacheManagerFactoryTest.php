@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Test\Cache;
+namespace Ixocreate\Test\Cache\Factory;
 
 use Ixocreate\Cache\CacheManager;
 use Ixocreate\Cache\Factory\CacheManagerFactory;

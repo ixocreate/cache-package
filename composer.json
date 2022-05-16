@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "php": "^7.2 || ^8.0",
+        "php": "^7.4 || ^8.0",
         "ixocreate/application": "^0.3.0",
         "ixocreate/cache": "^0.2.0"
     },
@@ -30,6 +30,11 @@
     "autoload": {
         "psr-4": {
             "Ixocreate\\Cache\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ixocreate\\Test\\Cache\\": "tests/src/"
         }
     },
     "config": {
