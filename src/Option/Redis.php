@@ -13,14 +13,14 @@ use Ixocreate\Cache\CacheItemPool;
 use Ixocreate\Cache\OptionInterface;
 use Ixocreate\ServiceManager\ServiceManagerInterface;
 use Psr\Cache\CacheItemPoolInterface;
+use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\Cache\Adapter\RedisAdapter;
 
 final class Redis implements OptionInterface
 {
-    /**
-     * @var
-     */
-    private $dsn;
+    private string $dsn;
+
+    private bool $allowMemoryFallback;
 
     /**
      * Redis constructor.
@@ -29,7 +29,7 @@ final class Redis implements OptionInterface
      * @param null $auth
      * @param null $database
      */
-    public function __construct($host, $port = null, $auth = null, $database = null)
+    public function __construct($host, $port = null, $auth = null, $database = null, bool $allowMemoryFallback = false)
     {
         $this->dsn = 'redis://';
         if ($auth !== null) {
@@ -42,6 +42,7 @@ final class Redis implements OptionInterface
         if ($database !== null) {
             $this->dsn .= '/' . $database;
         }
+        $this->allowMemoryFallback = $allowMemoryFallback;
     }
 
     /**
@@ -71,11 +72,18 @@ final class Redis implements OptionInterface
      */
     public function create(string $name, ServiceManagerInterface $serviceManager): CacheItemPoolInterface
     {
-        return new CacheItemPool(
-            new RedisAdapter(
+        try {
+            $adapter = new RedisAdapter(
                 RedisAdapter::createConnection($this->dsn),
                 $name
-            )
-        );
+            );
+        } catch (\Exception $e) {
+            if (!$this->allowMemoryFallback) {
+                throw $e;
+            }
+            $adapter = new ArrayAdapter(0, false);
+        }
+
+        return new CacheItemPool($adapter);
     }
 }
