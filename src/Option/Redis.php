@@ -21,6 +21,7 @@ final class Redis implements OptionInterface
     private string $dsn;
 
     private bool $allowMemoryFallback;
+    private array $options;
 
     /**
      * Redis constructor.
@@ -29,7 +30,7 @@ final class Redis implements OptionInterface
      * @param null $auth
      * @param null $database
      */
-    public function __construct($host, $port = null, $auth = null, $database = null, bool $allowMemoryFallback = false)
+    public function __construct($host, $port = null, $auth = null, $database = null, array $options = [], bool $allowMemoryFallback = false)
     {
         $this->dsn = 'redis://';
         if ($auth !== null) {
@@ -42,6 +43,7 @@ final class Redis implements OptionInterface
         if ($database !== null) {
             $this->dsn .= '/' . $database;
         }
+        $this->options = $options;
         $this->allowMemoryFallback = $allowMemoryFallback;
     }
 
@@ -74,7 +76,7 @@ final class Redis implements OptionInterface
     {
         try {
             $adapter = new RedisAdapter(
-                RedisAdapter::createConnection($this->dsn),
+                RedisAdapter::createConnection($this->dsn, $this->options),
                 $name
             );
         } catch (\Exception $e) {
