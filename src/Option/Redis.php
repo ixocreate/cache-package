@@ -21,6 +21,7 @@ final class Redis implements OptionInterface
     private string $dsn;
 
     private bool $allowMemoryFallback;
+
     private array $options;
 
     /**
@@ -54,6 +55,8 @@ final class Redis implements OptionInterface
     {
         return \serialize([
             'dsn' => $this->dsn,
+            'options' => $this->options,
+            'allowMemoryFallback' => $this->allowMemoryFallback,
         ]);
     }
 
@@ -64,6 +67,8 @@ final class Redis implements OptionInterface
     {
         $data = \unserialize($serialized);
         $this->dsn = $data['dsn'];
+        $this->options = $data['options'];
+        $this->allowMemoryFallback = $data['allowMemoryFallback'];
     }
 
     /**
